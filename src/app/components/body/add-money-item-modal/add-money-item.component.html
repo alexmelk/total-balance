@@ -1,0 +1,24 @@
+<dx-popup [height]="350" [width]="300" [showTitle]="true" title="Input money item" [dragEnabled]="false"
+  [showCloseButton]="true" [(visible)]="visible" (onHiding)="onClose()">
+  <form class="form">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Value</mat-label>
+      <input matInput placeholder="100 $" required type="number" min="0" [(ngModel)]="model.value" name="value"
+        #value="ngModel">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Type</mat-label>
+      <mat-select (selectionChange)="setType($event.value)">
+        <mat-option *ngFor="let type of types" [value]="type" required name="type">
+          {{type.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="model.comment" name="сomment"></textarea>
+    </mat-form-field>
+  </form>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button [disabled]="value.invalid" mat-button (click)="onEmit()">Create</button>
+</dx-popup>

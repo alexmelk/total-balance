@@ -1,0 +1,39 @@
+:host body {
+  margin: 0;
+  padding: 0;
+}
+
+.app,
+app-navbar,
+app-body,
+app-footer {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+app-navbar,
+app-footer {
+  height: 50px;
+  background-color: rgb(64, 64, 191);
+  color: white;
+}
+
+::ng-deep {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  span {
+    font-weight: 300 !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    line-height: initial !important;
+  }
+}
