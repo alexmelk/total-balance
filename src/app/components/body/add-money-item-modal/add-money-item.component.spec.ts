@@ -1,23 +1,21 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {AppAddMoneyItemComponent} from './add-money-item.component';
 
-import { AddMoneyItemComponent } from './add-money-item.component';
 
 describe('AddMoneyItemComponent', () => {
-  let component: AddMoneyItemComponent;
-  let fixture: ComponentFixture<AddMoneyItemComponent>;
+  let component: AppAddMoneyItemComponent;
+  let fixture: ComponentFixture<AppAddMoneyItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddMoneyItemComponent ]
+      declarations: [ AppAddMoneyItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddMoneyItemComponent);
+    fixture = TestBed.createComponent(AppAddMoneyItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

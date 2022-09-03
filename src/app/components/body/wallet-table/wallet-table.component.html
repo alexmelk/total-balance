@@ -1,7 +1,14 @@
 <div class="container">
-  <dx-data-grid #table [dataSource]="dataSource$.value" [showBorders]="true" [allowColumnReordering]="true">
-    <dxo-paging [pageSize]="10"></dxo-paging>
-    <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"></dxo-search-panel>
-    <dxi-item dataField="value"></dxi-item>
-  </dx-data-grid>
+    <dx-data-grid
+        [dataSource]="(dataSource$ | async) ?? []"
+        [showBorders]="true"
+        [allowColumnReordering]="true"
+    >
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+        ></dxo-search-panel>
+        <dxi-item dataField="value"></dxi-item>
+    </dx-data-grid>
 </div>

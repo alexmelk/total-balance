@@ -1,21 +1,22 @@
 <div class="container">
-  <div class="body">
-    <div class="flex">
-      <fa-icon class="green" [icon]="['fas','wallet']"></fa-icon>
-      <h2>
-        Total Balance:
-        <span class="nowrap">
-          {{totalBalance.toFixed(2)}}
-          {{currencySymbol}}
-        </span>
-      </h2>
-      <button mat-mini-fab color="primary">
-        <mat-icon aria-label="add button" (click)="openDialog(dialog)">add</mat-icon>
-      </button>
+    <div class="body">
+        <div class="flex">
+            <fa-icon class="green" [icon]="['fas', 'wallet']"></fa-icon>
+            <h2>
+                Total Balance:
+                <span class="nowrap">
+                    {{ (totalBalance$ | async)?.toFixed(2) }}
+                    {{ currencySymbol }}
+                </span>
+            </h2>
+            <button mat-mini-fab color="primary">
+                <mat-icon aria-label="add button" (click)="openDialog(dialog)"
+                    >add</mat-icon
+                >
+            </button>
+        </div>
+        <br />
+        <app-wallet-table #table></app-wallet-table>
+        <app-add-money-item #dialog></app-add-money-item>
     </div>
-    <br />
-    <app-wallet-table #table>
-    </app-wallet-table>
-    <app-add-money-item #dialog></app-add-money-item>
-  </div>
 </div>
